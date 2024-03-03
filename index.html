@@ -17,6 +17,19 @@
 </head>
 <body>
 
+<script>
+    // JavaScript functions to expand and collapse the section
+    function expandSection() {
+      var section = document.getElementById("mySection");
+      section.style.display = "block";
+    }
+
+    function collapseSection() {
+      var section = document.getElementById("mySection");
+      section.style.display = "none";
+    }
+</script>
+
 
 <!-- Navigation -->
 	<nav class="navbar navbar-inverse style="margin-left: 100px;"">
@@ -65,9 +78,13 @@
 
 	<div class="col">    
             <h2 id="news" style="margin-top: 10px;">News</h2>
-            <div class="col" ,="" style="max-height: 200px;overflow: scroll;border-color: black;border-style: solid;border-width: 1px;border-left: 0;border-right: 0;padding: 1em;/*! padding-top: 0; */">    
+            <div class="col">    
 		<p>Congratulations!</p>
-                     
+		<a href="#" onclick="expandSection(); return false;">More</a>
+		  <div id="mySection" class="expandable-section">
+                      <p>This is the content that will be hidden or shown when the hyperlinks are clicked. You can add any HTML elements here.</p>
+		      <a href="#" onclick="expandSection(); return false;">Less</a>
+                  </div>                
             </div>
         </div>        
 		    
