@@ -15,16 +15,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
 
-  <style>
-    /* Optional: Add some basic styling for better presentation */
-    .expandable-section {
-      margin: 0px;
-      padding: 10px;
-      border: 0px solid #ddd;
-      border-radius: 5px;
-      display: none; /* Hide the section initially */
-    }
-  </style>
+	<script type="text/javascript">
+	  <!-- block visibility -->
+	  function showBlock(id) {
+	    document.getElementById(id).style.display = 'block';
+	  }
+	  function hideBlock(id) {
+	    document.getElementById(id).style.display = 'none';
+	  }
+	  function toggleBlock(id) {
+	    if (document.getElementById(id).style.display == 'none') {
+	      document.getElementById(id).style.display = 'block';
+	    } else {
+	      document.getElementById(id).style.display = 'none';
+	    }
+	  }
+	  <!-- publication visibility -->
+	  function showAllPublications() {
+	    hideBlock('byyear'); hideBlock('selected'); showBlock('allpubs');
+	    var table = document.getElementById("pubsTable");
+	    for (var i = 0, row; row = table.rows[i]; i++) {
+	      row.style.display = "table-row";
+	    }
+	  }
+	  function showSelectedPublications() {
+	    hideBlock('byyear'); hideBlock('allpubs'); showBlock('selected');
+	    var table = document.getElementById("pubsTable");
+	    for (var i = 0, row; row = table.rows[i]; i++) {
+	      if (row.classList.contains("sel")) {
+		row.style.display = "table-row";
+	      } else {
+		row.style.display = "none";
+	      }
+	    }
+	  }
+	  function showYearlyPublications(yr) {
+	    hideBlock('allpubs'); hideBlock('selected'); showBlock('byyear');
+	    var table = document.getElementById("pubsTable");
+	    for (var i = 0, row; row = table.rows[i]; i++) {
+	      if (row.classList.contains(yr)) {
+		row.style.display = "table-row";
+	      } else {
+		row.style.display = "none";
+	      }
+	    }
+	  }
+	</script>
 </head>
 <body>
 
@@ -90,12 +126,27 @@
 	<div class="col">    
             <h2 id="news" style="margin-top: 10px;">News</h2>
             <div class="col">    
-		<p>Congratulations!</p>
-		<a href="#" onclick="expandSection(); return false;">More</a>
-		  <div id="mySection" class="expandable-section">
-                      <p>This is the content that will be hidden or shown when the hyperlinks are clicked. You can add any HTML elements here.</p>
-		      <a href="#" onclick="expandSection(); return false;">Less</a>
-                  </div>                
+		<ul style="margin-top:0; margin-bottom:0;">
+		  <!-- add news here -->
+		<li><img src="images/new.gif"> (2024-02) We have five papers accepted to CVPR 2024. Congratulations to all authors.  
+		<li><img src="images/new.gif"> (2024-02) We have a paper accepted to TMLR and a paper accepted to ICAPS 2024. Congratulations to David and Oliver.  
+		<li><img src="images/new.gif"> (2024-01) We have a paper accepted to ICLR 2024. Congratulations to Qinyu.
+		</ul>
+		<div id="news" class="blockDetails" style="display: block;">
+			<br/>[ <a href="#" onClick="hideBlock('news'); showBlock('allnews'); return false;">more</a> ]
+		</div>
+		
+		<div id="allnews" style="display: none;">
+			<ul style="margin-top:0; margin-bottom:0;">
+			<!-- move old news here -->
+			<li><img src="images/new.gif"> (2023-11) We have released v2.0.5 of our video annotation tool (<a href="https://github.com/anucvml/vidat" target="_blank">vidat</a>).
+			<li><img src="images/new.gif"> (2023-10) We have five papers accepted to WACV 2024. Congratulations to all authors.
+			<li><img src="images/new.gif"> (2023-09) We have a paper accepted to NeurIPS 2023. Congratulations to Ming and Tim.    
+			</ul>
+		<div class="blockDetails">
+			<br/>[ <a href="#" onClick="hideBlock('allnews'); showBlock('news'); document.location='#'; return false;">less</a> ]
+		</div>
+		<div class="linktop"><a href="#top">&#x25b2;top</a></div>
             </div>
         </div>        
 		    
