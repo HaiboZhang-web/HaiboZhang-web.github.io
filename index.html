@@ -49,17 +49,6 @@
 	      }
 	    }
 	  }
-	  function showYearlyPublications(yr) {
-	    hideBlock('allpubs'); hideBlock('selected'); showBlock('byyear');
-	    var table = document.getElementById("pubsTable");
-	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains(yr)) {
-		row.style.display = "table-row";
-	      } else {
-		row.style.display = "none";
-	      }
-	    }
-	  }
 	</script>
 </head>
 <body>
@@ -172,6 +161,7 @@
         <!-- Publications -->
         <div class="col">    
             <h2 id="publications">Publications</h2>
+	    <div id="byyear" style="display: none;">
 		<div id="selected" style="display: none;">
 		<span class="sectionTitle">Selected Publications</span>
 		[ <a href="#" onClick="showAllPublications(); return false;">show all</a> ]
@@ -180,6 +170,59 @@
 		<span class="sectionTitle">All Publications</span>
 		[ <a href="#" onClick="showSelectedPublications(); return false;">show selected</a> ]
 		</div>
+
+		<table border="0" cellpadding="5px" cellspacing="2" id="pubsTable" class="paperTable">
+			<tr valign="top" class="all yr2024">
+			<td><img src="images/glyphs/soon.png" class="paperIcon"></td>
+			<td>
+			<div class="paperTitle">
+			<img src="images/new.gif">
+			Temporally Consistent Unbalanced Optimal Transport for Unsupervised Action Segmentation
+			</div>
+			<div class="paperDetails">
+			Ming Xu and Stephen Gould.</br>
+			To appear in <i>IEEE Conference on Computer Vision and Pattern Recognition (CVPR),</i> 2024.<br/>
+			<pre id="cvpr24a" class="paperCite" style="display: none;">
+			@inproceedings{Xu:CVPR2024,
+			  author    = {Ming Xu and
+			               Stephen Gould},
+			  title     = {Temporally Consistent Unbalanced Optimal Transport for Unsupervised Action Segmentation},
+			  booktitle = {CVPR},
+			  year      = {2024}
+			}
+			</pre>
+			[ paper coming soon |
+			  <a href="#" onClick="toggleBlock('cvpr24a'); return false;">bib</a> ]
+			</div>
+			</td></tr>
+			
+			<tr valign="top" class="sel yr2024">
+			<td><img src="images/glyphs/soon.png" class="paperIcon"></td>
+			<td>
+			<div class="paperTitle">
+			<img src="images/new.gif">
+			Small Steps and Level Sets: Fitting Neural Surface Models with Point Guidance
+			</div>
+			<div class="paperDetails">
+			Chamin Hewa Koneputugodage, Yizhak Ben-Shabat, Dylan Campbell and Stephen Gould.</br>
+			To appear in <i>IEEE Conference on Computer Vision and Pattern Recognition (CVPR),</i> 2024.<br/>
+			<pre id="cvpr24b" class="paperCite" style="display: none;">
+			@inproceedings{Koneputugodage:CVPR2024,
+			  author    = {Chamin Hewa Koneputugodage and
+			               Yizhak Ben-Shabat and
+			               Dylan Campbell and
+			               Stephen Gould},
+			  title     = {Small Steps and Level Sets: Fitting Neural Surface Models with Point Guidance},
+			  booktitle = {CVPR},
+			  year      = {2024}
+			}
+			</pre>
+			[ paper coming soon |
+			  <a href="#" onClick="toggleBlock('cvpr24b'); return false;">bib</a> ]
+			</div>
+			</td></tr>
+		</table>
+	    </div>
         </div>
 
             
