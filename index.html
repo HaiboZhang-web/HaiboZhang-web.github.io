@@ -32,31 +32,20 @@
 	  }
 	  <!-- publication visibility -->
 	  function showAllPublications() {
-	    hideBlock('byyear'); hideBlock('selected'); showBlock('allpubs');
+	    hideBlock('selected'); showBlock('allpubs');
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      row.style.display = "table-row";
 	    }
 	  }
 	  function showSelectedPublications() {
-	    hideBlock('byyear'); hideBlock('allpubs'); showBlock('selected');
+	    hideBlock('allpubs'); showBlock('selected');
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      if (row.classList.contains("sel")) {
 		row.style.display = "table-row";
 	      } else {
 		row.style.display = "none";
-	      }
-	    }
-	  }
-	  function showYearlyPublications(yr) {
-	    hideBlock('allpubs'); hideBlock('selected'); showBlock('byyear');
-	    var table = document.getElementById("pubsTable");
-	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains(yr)) {
-	        row.style.display = "table-row";
-	      } else {
-	        row.style.display = "none";
 	      }
 	    }
 	  }
@@ -172,11 +161,11 @@
         <!-- Publications -->
         <div class="col">    
 		<div id="selected" style="display: none;">
-			<span style="font-size:30px; margin-top:80px; margin-bottom:20px">Selected Publications</span>
+			<span style="font-size:30px; margin-top:80px; margin-bottom:30px">Selected Publications</span>
 			[ <a href="#" onClick="showAllPublications(); return false;">show all</a> ]
 		</div>
 		<div id="allpubs" style="display: block;">
-			<span style="font-size:30px; margin-top:80px; margin-bottom:20px">All Publications</span>
+			<span style="font-size:30px; margin-top:80px; margin-bottom:30px">All Publications</span>
 			[ <a href="#" onClick="showSelectedPublications(); return false;">show selected</a> ]
 		</div>
 
