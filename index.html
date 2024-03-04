@@ -49,6 +49,17 @@
 	      }
 	    }
 	  }
+	  function showYearlyPublications(yr) {
+	    hideBlock('allpubs'); hideBlock('selected'); showBlock('byyear');
+	    var table = document.getElementById("pubsTable");
+	    for (var i = 0, row; row = table.rows[i]; i++) {
+	      if (row.classList.contains(yr)) {
+	        row.style.display = "table-row";
+	      } else {
+	        row.style.display = "none";
+	      }
+	    }
+	  }
 	</script>
 </head>
 <body>
@@ -161,11 +172,11 @@
         <!-- Publications -->
         <div class="col">    
 		<div id="selected" style="display: none;">
-			<span class="sectionTitle">Selected Publications</span>
+			<span><h2 style="margin-top: 10px;">Selected Publications</h2></span>
 			[ <a href="#" onClick="showAllPublications(); return false;">show all</a> ]
 		</div>
 		<div id="allpubs" style="display: block;">
-			<span class="sectionTitle">All Publications</span>
+			<span><h2 style="margin-top: 10px;">All Publications</h2></span>
 			[ <a href="#" onClick="showSelectedPublications(); return false;">show selected</a> ]
 		</div>
 
