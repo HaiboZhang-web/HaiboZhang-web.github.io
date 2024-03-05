@@ -32,7 +32,7 @@
 	  }
 	  <!-- publication visibility -->
 	  function showAllPublications() {
-	    hideBlock('byyear'); showBlock('allpubs');
+	    hideBlock('selected'); showBlock('allpubs');
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      row.style.display = "table-row";
