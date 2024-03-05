@@ -41,8 +41,9 @@
 	  function showSelectedPublications() {
 	    hideBlock('allpubs'); showBlock('selected');
 	    var table = document.getElementById("pubsTable");
+	    var yr = new Date().getFullYear();
 	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains("sel")) {
+	      if (row.classList.contains(yr)) or (row.classList.contains(yr-1)) or (row.classList.contains(yr-2)) {
 	        row.style.display = "table-row";
 	      } else {
 	        row.style.display = "none";
