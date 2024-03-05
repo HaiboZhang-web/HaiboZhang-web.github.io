@@ -32,20 +32,20 @@
 	  }
 	  <!-- publication visibility -->
 	  function showAllPublications() {
-	    hideBlock('selected'); showBlock('allpubs');
+	    hideBlock('byyear'); showBlock('allpubs');
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      row.style.display = "table-row";
 	    }
 	  }
-	  function showSelectedPublications() {
-	    hideBlock('allpubs'); showBlock('selected');
+	  function showYearlyPublications(yr) {
+	    hideBlock('allpubs'); showBlock('byyear');
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains("sel")) {
-		row.style.display = "table-row";
+	      if (row.classList.contains(yr)) {
+	        row.style.display = "table-row";
 	      } else {
-		row.style.display = "none";
+	        row.style.display = "none";
 	      }
 	    }
 	  }
@@ -163,7 +163,7 @@
 		</h2>
 
 		<table border="0" cellpadding="5px" cellspacing="2" id="pubsTable" class="paperTable">
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>IEEE TKDE</b></td>
 			<td>
 			<div class="paperTitle">
@@ -185,7 +185,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>IEEE T-ITS</b></td>
 			<td>
 			<div class="paperTitle">
@@ -207,7 +207,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>IEEE TCAD</b></td>
 			<td>
 			<div class="paperTitle">
@@ -232,7 +232,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>ACM TECS</b></td>
 			<td>
 			<div class="paperTitle">
@@ -257,7 +257,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>ACM TIM</b></td>
 			<td>
 			<div class="paperTitle">
@@ -279,7 +279,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>ICPP'23</b></td>
 			<td>
 			<div class="paperTitle">
@@ -302,7 +302,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>ICPP'23</b></td>
 			<td>
 			<div class="paperTitle">
@@ -325,7 +325,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>PPoPP'23</b></td>
 			<td>
 			<div class="paperTitle">
@@ -348,7 +348,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>ACM TIM</b></td>
 			<td>
 			<div class="paperTitle">
@@ -372,7 +372,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>IEEE JBHI</b></td>
 			<td>
 			<div class="paperTitle">
@@ -397,7 +397,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2022">
+			<tr valign="top" class="2022">
 			<td width="100px"><b>IEEE TWC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -422,7 +422,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2023">
+			<tr valign="top" class="2023">
 			<td width="100px"><b>PAKDD'22</b></td>
 			<td>
 			<div class="paperTitle">
@@ -445,7 +445,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2021">
+			<tr valign="top" class="2021">
 			<td width="100px"><b>IEEE TMC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -470,7 +470,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2021">
+			<tr valign="top" class="2021">
 			<td width="100px"><b>IEEE TMC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -495,7 +495,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2020">
+			<tr valign="top" class="2020">
 			<td width="100px"><b>LCN'20</b></td>
 			<td>
 			<div class="paperTitle">
@@ -518,7 +518,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2020">
+			<tr valign="top" class="2020">
 			<td width="100px"><b>IEEE TKDE</b></td>
 			<td>
 			<div class="paperTitle">
@@ -543,7 +543,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2019">
+			<tr valign="top" class="2019">
 			<td width="100px"><b>IFIP Networking</b></td>
 			<td>
 			<div class="paperTitle">
@@ -566,7 +566,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2019">
+			<tr valign="top" class="2019">
 			<td width="100px"><b>ACM TECS</b></td>
 			<td>
 			<div class="paperTitle">
@@ -591,7 +591,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2017">
+			<tr valign="top" class="2017">
 			<td width="100px"><b>IEEE T-SUSC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -616,7 +616,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2017">
+			<tr valign="top" class="2017">
 			<td width="100px"><b>ACM TOIT</b></td>
 			<td>
 			<div class="paperTitle">
@@ -641,7 +641,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2015">
+			<tr valign="top" class="2015">
 			<td width="100px"><b>INFOCOM'15</b></td>
 			<td>
 			<div class="paperTitle">
@@ -664,7 +664,7 @@
 			</div>
 			</td></tr>	
 
-			<tr valign="top" class="sel yr2014">
+			<tr valign="top" class="2014">
 			<td width="100px"><b>IEEE TVT</b></td>
 			<td>
 			<div class="paperTitle">
@@ -689,7 +689,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2014">
+			<tr valign="top" class="2014">
 			<td width="100px"><b>INFOCOM'14</b></td>
 			<td>
 			<div class="paperTitle">
@@ -712,7 +712,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2013">
+			<tr valign="top" class="2013">
 			<td width="100px"><b>IEEE TWC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -737,7 +737,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2012">
+			<tr valign="top" class="2012">
 			<td width="100px"><b>IEEE TWC</b></td>
 			<td>
 			<div class="paperTitle">
@@ -762,7 +762,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2009">
+			<tr valign="top" class="2009">
 			<td width="100px"><b>IEEE TPDS</b></td>
 			<td>
 			<div class="paperTitle">
@@ -787,7 +787,7 @@
 			</div>
 			</td></tr>
 
-			<tr valign="top" class="sel yr2008">
+			<tr valign="top" class="2008">
 			<td width="100px"><b>IEEE TPDS</b></td>
 			<td>
 			<div class="paperTitle">
