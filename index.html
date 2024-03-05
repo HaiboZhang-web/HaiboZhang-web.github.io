@@ -42,6 +42,7 @@
 	    hideBlock('allpubs'); showBlock('selected');
 	    var table = document.getElementById("pubsTable");
 	    var yr = new Date().getFullYear();
+	    window.alert(yr.toString());
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      if ((row.classList.contains(yr.toString())) || (row.classList.contains((yr-1).toString())) || (row.classList.contains((yr-2).toString()))) {
 	        row.style.display = "table-row";
