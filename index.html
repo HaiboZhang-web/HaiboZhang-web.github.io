@@ -43,9 +43,9 @@
 	    var table = document.getElementById("pubsTable");
 	    for (var i = 0, row; row = table.rows[i]; i++) {
 	      row.style.display = "none";
-	      var yr = new Date().getFullYear();
-	      for (var j=0; j<4; j++) {
-		 yr = yr -j;
+	      var yr = new Date().getFullYear()+1;
+	      for (let j=0; j<4; j++) {
+		 yr = yr -1;
 		 var yrstr = "'yr"+yr.toString()+"'";
 		 window.alert(yrstr);
 	         if (row.classList.contains(yrstr)) {
