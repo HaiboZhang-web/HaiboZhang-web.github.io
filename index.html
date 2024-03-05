@@ -45,7 +45,7 @@
 	      var yr = new Date().getFullYear();
 	      for (var j=0; j<4; j++) {
 		 yr = yr -j;
-		 var yrstr = yr.toString();
+		 var yrstr = "'"+yr.toString()+"'";
 	         if (row.classList.contains(yrstr)) {
 	            row.style.display = "table-row";
 	            window.alert("Get one row");
