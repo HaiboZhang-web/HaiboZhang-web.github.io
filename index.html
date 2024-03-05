@@ -38,11 +38,12 @@
 	      row.style.display = "table-row";
 	    }
 	  }
-	  function showYearlyPublications(yr) {
+	  function showYearlyPublications() {
 	    hideBlock('allpubs'); showBlock('byyear');
 	    var table = document.getElementById("pubsTable");
+	    var cyear = new Date().getFullYear();
 	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains(yr)) {
+	      if (row.classList.contains(cyear)) or (row.classList.contains(cyear-1)) or (row.classList.contains(cyear-2)) {
 	        row.style.display = "table-row";
 	      } else {
 	        row.style.display = "none";
@@ -148,7 +149,7 @@
 		<!--
 		<div id="allpubs" style="display: none;">
 			<span style="font-family:inherit;font-size:30px; margin-top:150px; margin-bottom:60px">All Publications</span>
-			[ <a href="#" onClick="showSelectedPublications(); return false;">show selected</a> ]
+			[ <a href="#" onClick="showAllPublications(); return false;">show selected</a> ]
 		</div>
 
 		<div id="selected" style="display: block;">
@@ -159,7 +160,7 @@
 		
 		<h2>
 			<span>Selected Publications</span>
-			<span style="font-size:12px">[<a href="https://scholar.google.co.nz/citations?user=ehJjIDgAAAAJ&hl=en">full list of publications in Google Scholar</a> ]</span>
+			<span style="font-size:14px">[<a href="#" onClick="showYearlyPublications(); return false;">3 years</a> | <a href="#" onClick="showAllPublications(); return false;">all</a> | <a href="https://scholar.google.co.nz/citations?user=ehJjIDgAAAAJ&hl=en">full list of publications in Google Scholar</a> ]</span>
 		</h2>
 
 		<table border="0" cellpadding="5px" cellspacing="2" id="pubsTable" class="paperTable">
