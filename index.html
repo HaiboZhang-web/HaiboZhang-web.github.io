@@ -145,6 +145,7 @@
 		    
         <!-- Publications -->
         <div id="publications" class="col">    
+		<!--
 		<div id="allpubs" style="display: block;">
 				<span>Selected Publications (3 years)</span>
 				[<a href="#" onClick="showAllPublications(); return false;">show all selected</a> | 
@@ -156,8 +157,17 @@
 				<span style="font-size:14px">[<a href="#" onClick="sshowSelectedPublications(); return false;">shows 3 years</a> | 
 					                      <a href="https://scholar.google.co.nz/citations?user=ehJjIDgAAAAJ&hl=en">full list in Google Scholar</a> ]</span>
 		</div>
+                -->
 
-		
+		<div id="selected" style="display: none;">
+		<span class="sectionTitle">Selected Publications</span>
+		[ <a href="#" onClick="showAllPublications(); return false;">show all</a> ]
+		</div>
+		<div id="allpubs" style="display: block;">
+		<span class="sectionTitle">All Publications</span>
+		[ <a href="#" onClick="showSelectedPublications(); return false;">show selected</a> ]
+		</div>
+				
 		
 
 
