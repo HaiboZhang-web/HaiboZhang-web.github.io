@@ -38,12 +38,11 @@
 	      row.style.display = "table-row";
 	    }
 	  }
-	  function showYearlyPublications() {
-	    hideBlock('allpubs'); showBlock('byyear');
+	  function showSelectedPublications() {
+	    hideBlock('byyear'); hideBlock('allpubs'); showBlock('selected');
 	    var table = document.getElementById("pubsTable");
-	    var cyear = new Date().getFullYear();
 	    for (var i = 0, row; row = table.rows[i]; i++) {
-	      if (row.classList.contains(cyear)) or (row.classList.contains(cyear-1)) or (row.classList.contains(cyear-2)) {
+	      if (row.classList.contains("sel")) {
 	        row.style.display = "table-row";
 	      } else {
 	        row.style.display = "none";
@@ -154,7 +153,7 @@
 
 		<div id="byyear" style="display: none;">
 				<span>Selected Publications (all selected)</span>
-				<span style="font-size:14px">[<a href="#" onClick="showYearlyPublications(); return false;">shows 3 years</a> | 
+				<span style="font-size:14px">[<a href="#" onClick="sshowSelectedPublications(); return false;">shows 3 years</a> | 
 					                      <a href="https://scholar.google.co.nz/citations?user=ehJjIDgAAAAJ&hl=en">full list in Google Scholar</a> ]</span>
 		</div>
 
