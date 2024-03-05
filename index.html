@@ -47,9 +47,9 @@
 	      for (var j=0; j<4; j++) {
 		 yr = yr -j;
 		 var yrstr = "'yr"+yr.toString()+"'";
-	         if (row.classList.contains('yr2023')) {
+	         if (row.classList.contains(yrstr)) {
 	            row.style.display = "table-row";
-		    window.alert("one row added");
+		    window.alert("row "+i.toString()+ " added");
 	         } 
 	      }
 	    }
