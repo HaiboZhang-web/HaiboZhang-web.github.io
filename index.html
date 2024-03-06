@@ -874,10 +874,11 @@
     
 </body>
 <div class="footer">
+	<span id="updatedate"></span>
 	<script>
 		var currentdate = new Date();
-		var datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear(); 
-		<span>Updated on $datetime, Haibo Zhang</span>
+		var datetime = currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear(); 
+		document.getElementById("updatedate").innerHTML = "Updated on " + datetime + ", Haibo Zhang";
 	</script>
 </div>
 </html>
